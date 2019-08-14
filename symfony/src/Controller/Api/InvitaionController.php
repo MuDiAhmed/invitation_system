@@ -4,14 +4,14 @@ namespace App\Controller\Api;
 
 use App\Entity\Invitaion;
 use App\Entity\User;
-use FOS\RestBundle\Controller\FOSRestController;
+use FOS\RestBundle\Controller\AbstractFOSRestController;
 use FOS\RestBundle\View\View;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 use FOS\RestBundle\Controller\Annotations as Rest;
 
-class InvitaionController extends FOSRestController
+class InvitaionController extends AbstractFOSRestController
 {
     /**
      * @Rest\Get("/invitation/sent", name="api_invitaion_sent")
