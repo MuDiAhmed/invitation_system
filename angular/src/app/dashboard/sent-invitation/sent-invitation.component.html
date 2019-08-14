@@ -6,7 +6,7 @@
     <mat-list-item *ngFor="let invitation of invitations; let i = index" >
       <span matLine>Email: {{invitation.receiver.email}}</span>
       <span matLine>Status: {{invitation.accept != undefined?invitation.accept?"Accepted":"Canceled":"Pending"}}</span>
-      <button mat-icon-button (click)="delete(invitation, i)">
+      <button *ngIf="invitation.accept == undefined" mat-icon-button (click)="delete(invitation, i)">
         <mat-icon>delete</mat-icon>
       </button>
     </mat-list-item>

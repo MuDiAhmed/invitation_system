@@ -22,7 +22,7 @@ export class ReceivedInvitationComponent {
     console.log(state, index);
     this.invitationService.acceptRejectInvitation(invitation.id, state)
       .subscribe((response) => {
-        this.invitations.splice(index,1);
+        this.invitations[index] = response;
         console.log(this.invitations);
       })
   }

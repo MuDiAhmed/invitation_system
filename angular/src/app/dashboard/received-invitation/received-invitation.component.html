@@ -2,12 +2,15 @@
   <mat-nav-list>
     <mat-list-item *ngFor="let invitation of invitations; let i = index" >
       <span matLine>{{invitation.sender.email}}</span>
-      <button mat-icon-button (click)="acceptReject(invitation,true, i)" >
+      <button *ngIf="invitation.accept == undefined" mat-icon-button (click)="acceptReject(invitation,true, i)" >
         <mat-icon>done</mat-icon>
       </button>
-      <button mat-icon-button (click)="acceptReject(invitation, false, i)">
+      <button *ngIf="invitation.accept == undefined" mat-icon-button (click)="acceptReject(invitation, false, i)">
         <mat-icon>close</mat-icon>
       </button>
+      <span *ngIf="invitation.accept != undefined">
+        {{invitation.accept?"Accepted":"Canceled"}}
+      </span>
     </mat-list-item>
   </mat-nav-list>
 </div>
