@@ -66,6 +66,9 @@ class InvitaionController extends FOSRestController
     {
         $entity_manager = $this->getDoctrine()->getManager();
         $isAccept = $request->get('accept');
+        if($isAccept === $invitation->getAccept()){
+            return View::create("Unauthorized", Response::HTTP_UNAUTHORIZED);
+        }
         $invitation->setAccept($isAccept);
         $entity_manager->persist($invitation);
         $entity_manager->flush();
