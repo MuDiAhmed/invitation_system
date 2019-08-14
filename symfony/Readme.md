@@ -16,3 +16,7 @@
 8.  Run `mkdir -p config/jwt`
 9.  Run `openssl genpkey -out config/jwt/private.pem -aes256 -algorithm rsa -pkeyopt rsa_keygen_bits:4096` then use the `JWT_PASSPHRASE` in the `.env` file as the passphrase
 10.  Run `openssl pkey -in config/jwt/private.pem -out config/jwt/public.pem -pubout`
+
+### Test:
+1. First follow `Run` section 
+2. Run `php bin/phpunit` in a new terminal window
