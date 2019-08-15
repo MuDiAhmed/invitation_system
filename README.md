@@ -8,3 +8,4 @@
 ### TODO: 
 1. Move the app to `docker containers`
 2. Cover all `API` Routes with functional tests
+3. Fix vulnerability issue track number `CVE-2019-8331` with frontend bootstrap dependance
